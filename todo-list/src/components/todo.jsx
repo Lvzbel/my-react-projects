@@ -14,7 +14,14 @@ const Todo = props => (
           <td>{todo.expiration.format("MMM Do YY")}</td>
           <td>{todo.completed ? "yes" : "no"}</td>
           <td>
-            <button className="btn btn-danger">Delete</button>
+            <button
+              onClick={() => {
+                props.onDelete(todo.id);
+              }}
+              className="btn btn-danger"
+            >
+              Delete
+            </button>
           </td>
         </tr>
       );

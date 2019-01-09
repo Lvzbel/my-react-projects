@@ -17,7 +17,7 @@ const TodoListTable = props => {
         </tr>
       </thead>
       <tbody>
-        <Todo todos={props.todos} />
+        <Todo todos={props.todos} onDelete={props.onDelete} />
       </tbody>
     </table>
   );

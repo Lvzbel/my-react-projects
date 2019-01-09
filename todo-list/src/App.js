@@ -38,12 +38,26 @@ class App extends Component {
       }
     ]
   };
+
+  handleDelete = id => {
+    const todos = this.state.todos.filter(todo => {
+      if (id !== todo.id) {
+        return todo;
+      }
+    });
+
+    this.setState({ todos });
+  };
+
   render() {
     return (
       <React.Fragment>
         <NavBar title={"Todo List - React Project 1"} />
         <main role="main" className="container">
-          <TodoListTable todos={this.state.todos} />
+          <TodoListTable
+            todos={this.state.todos}
+            onDelete={this.handleDelete}
+          />
           <TodoForm />
         </main>
       </React.Fragment>
